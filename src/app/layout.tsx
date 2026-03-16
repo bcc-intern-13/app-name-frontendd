@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { poppins } from "@/shared/utils/font";
+import { inter } from "@/shared/utils/font";
 import "@/styles/globals.css"
 
 export const metadata: Metadata = {
@@ -16,7 +17,7 @@ export default function RootLayout({
 
     <html lang="en">
       <body
-        className={`${poppins.variable}  antialiased`}
+        className={`${poppins.variable} ${inter.variable}   antialiased`}
       >
         {children}
       </body>

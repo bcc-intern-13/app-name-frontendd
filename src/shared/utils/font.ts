@@ -95,3 +95,19 @@ export const poppins = localFont({
   ],
   variable: "--font-poppins",
 })
+
+export const inter = localFont({
+  src: [
+    {
+      path: "../../assets/fonts/Inter/Inter_18pt-Regular.ttf",
+      weight: "400",
+      style: "normal",
+    },
+    {
+      path: "../../assets/fonts/Inter/Inter_18pt-Medium.ttf",
+      weight: "500",
+      style: "normal",
+    },
+  ],
+  variable: "--font-inter",
+})
