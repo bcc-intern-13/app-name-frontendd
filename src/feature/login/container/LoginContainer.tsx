@@ -2,11 +2,7 @@ import React from 'react'
 
 const LoginContainer = () => {
   return (
-    <section>
-        <div>
-            LoginForm
-        </div>
-    </section>
+    <div>LoginContainer</div>
   )
 }
 
