@@ -24,10 +24,10 @@ const JobCard = ({ job }: { job: JobCardType }) => {
                 px-4 py-1 rounded-full text-sm border
                 ${
                   tag === "Remote"
-                    ? "border-blue-500 text-blue-500"
+                    ? "border-secondary text-secondary"
                     : tag === "Tuli/Bisu"
-                    ? "border-orange-400 text-orange-400"
-                    : "border-gray-300 text-gray-500"
+                    ? "border-or-05 text-or-05 bg-or-03"
+                    : "border-gray-400 text-gray-500"
                 }
               `}
             >

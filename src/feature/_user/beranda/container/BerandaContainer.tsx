@@ -5,16 +5,18 @@ import LamaranBeranda from '../components/LamaranBeranda'
 
 const BerandaContainer = () => {
   return (
-    <div className='pt-34 w-screen flex justify-between gap-4 px-4 md:px-20'>
-        <div className='w-2/3 space-y-8 '>
-            <HeaderBeranda/>
-            <RekomendasiLamaran/>
-        </div>
+    <section className='relative mx-auto max-w-7xl'>
+        <div className=' pt-34 flex gap-4 mx-20'>
+            <div className='w-[65%] space-y-8 '>
+                <HeaderBeranda/>
+                <RekomendasiLamaran/>
+            </div>
 
-        <div className='w-1/3'>
-            <LamaranBeranda/>
+            <div className=''>
+                <LamaranBeranda/>
+            </div>
         </div>
-    </div>
+    </section>
   )
 }
 

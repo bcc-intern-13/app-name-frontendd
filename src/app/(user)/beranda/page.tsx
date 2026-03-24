@@ -4,12 +4,9 @@ import React from 'react'
 
 const page = () => {
   return (
-    <main className='bg-bl-01 min-h-screen'>
-        <NavLogin/>
-        <section>
-            <BerandaContainer/>
-        </section>
-    </main>
+    <section className='bg-bl-01 min-h-screen'>
+        <BerandaContainer/>
+    </section>
   )
 }
 

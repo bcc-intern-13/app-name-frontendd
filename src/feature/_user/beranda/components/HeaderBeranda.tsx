@@ -11,7 +11,7 @@ const HeaderBeranda = () => {
                     </h3>
                     <p className='h3-bold'>
                         {/* Username User */}
-                        Rizki 
+                        Raffa 
                     </p>
                 </div>
                 <p className='caption-regular'>
@@ -26,19 +26,19 @@ const HeaderBeranda = () => {
         </div>
 
         <div className='flex items-center justify-between gap-8'>
-            <div className='w-67 h-11 bg-white rounded-xl border border-[#D9D9D9] flex items-center justify-center'>
+            <div className='w-67 h-11 bg-white rounded-xl border border-[#D9D9D9] flex items-center justify-center text-center'>
                 <p className='text-base font-semibold'>
                     {/* Total Job */}
                     8 Total Lamaran
                 </p>
             </div>
-            <div className='w-67 h-11 bg-white  rounded-xl border border-[#D9D9D9] flex items-center justify-center'>
+            <div className='w-67 h-11 bg-white  rounded-xl border border-[#D9D9D9] flex items-center justify-center text-center'>
                 <p className='text-base font-semibold'>
                     {/* Total Dipanggil */}
                     1 Dipanggil Interview 
                 </p>
             </div>
-            <div className='w-67 h-11 bg-white  rounded-xl border border-[#D9D9D9] flex items-center justify-center'>
+            <div className='w-67 h-11 bg-white  rounded-xl border border-[#D9D9D9] flex items-center justify-center text-center'>
                 <p className='text-base font-semibold'>
                     {/* Total Disimpan */}
                     12 Lowongan Disimpan

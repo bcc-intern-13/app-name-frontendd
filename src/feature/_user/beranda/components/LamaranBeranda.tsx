@@ -2,6 +2,7 @@
 import Link from "next/link"
 import { lamaranData } from "../data/lamaranData"
 import { statusStyle } from "../data/lamaranData"
+import { StatusButton } from "@/components/ui/molecules/statusButton"
 
 
 export default function LamaranBeranda() {
@@ -21,16 +22,16 @@ export default function LamaranBeranda() {
         </Link>
       </div>
 
-      <div className="grid md:grid-cols-3 items-center gap-1 ">
-        <div className="bg-bl-01 px-2 py-3 rounded-xl border-2 border-secondary text-bl-07 body-bold text-sm text-center">
+      <div className="flex items-center gap-2 ">
+        <StatusButton variant={"diproses"} size={"default"}>
           3 Diproses
-        </div>
-        <div className="bg-gr-03 px-2 py-3 rounded-xl border-2 border-gr-05 text-gr-05 body-bold text-sm text-center">
+        </StatusButton>
+        <StatusButton variant={"dipanggil"} size={"default"}>
           1 Dipanggil
-        </div>
-        <div className="bg-red-02 px-2 py-3 rounded-xl border-2 border-red-04 text-red-04 body-bold text-sm text-center">
+        </StatusButton>
+        <StatusButton variant={"ditolak"} size={"default"}>
           2 Ditolak
-        </div>
+        </StatusButton>
         
       </div>
 

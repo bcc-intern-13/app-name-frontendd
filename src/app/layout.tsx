@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { poppins } from "@/shared/utils/font";
 import { inter } from "@/shared/utils/font";
 import "@/styles/globals.css"
+import Script from "next/script";
 
 export const metadata: Metadata = {
   title: "Create Next App",
@@ -19,6 +20,7 @@ export default function RootLayout({
       <body
         className={`${poppins.variable} ${inter.variable}   antialiased`}
       >
+        <Script src="https://cdn.userway.org/widget.js" data-account="nxbubKAjQO" strategy="afterInteractive"/>
         {children}
       </body>
     </html>
