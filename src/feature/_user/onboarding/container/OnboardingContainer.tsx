@@ -11,7 +11,9 @@ import { Step1 } from '../components/Step1'
 // import { Progress } from '@/components/ui/progress'
 import { ChevronLeft } from 'lucide-react'
 
-const TOTAL_STEPS = 6
+export const TOTAL_STEPS = 6
+
+
 
 export default function OnboardingContainer() {
   const { currentStep, prevStep, getProgress } = useOnboardingStore()
@@ -52,10 +54,6 @@ export default function OnboardingContainer() {
               </button>
             )}
 
-            {/* Step indicator */}
-            <div className="ml-auto text-sm text-gray-600 font-medium">
-              Langkah {currentStep} dari {TOTAL_STEPS}
-            </div>
           </div>
 
           {/* Progress bar
