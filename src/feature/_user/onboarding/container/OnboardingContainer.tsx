@@ -6,6 +6,8 @@ import { Step2 } from '../components/Step2'
 import { ChevronLeft } from 'lucide-react'
 import { Step3 } from '../components/Step3'
 import { Step4 } from '../components/Step4'
+import { Step5 } from '../components/Step5'
+import { Step6 } from '../components/Step6'
 
 export const TOTAL_STEPS = 6
 
@@ -24,6 +26,10 @@ export default function OnboardingContainer() {
         return <Step3/>
       case 4:
         return <Step4/>
+      case 5:
+        return <Step5/>
+      case 6:
+        return <Step6/>
       default:
         return <Step1 />
     }

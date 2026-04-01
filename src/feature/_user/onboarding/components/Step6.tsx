@@ -2,22 +2,21 @@
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { step4Schema, type Step4Data } from '@/lib/validations/onboarding'
+import { step6Schema, type Step6Data } from '@/lib/validations/onboarding'
 import { useOnboardingStore } from '@/lib/stores/onboarding'
 import { Button } from '@/components/ui/atoms/button'
 import { FormField } from '@/components/ui/molecules/form'
 import { number } from 'zod'
 
 
-const PENDIDIKAN_OPTIONS = [
-  'SMA/MK',
-  'D3',
-  'S1',
-  'S2 ke atas',
+const TIPE_OPTIONS = [
+  'Remote Penuh',
+  'Hybrid',
+  'Onsite',
 ]
 
 
-export function Step4() {
+export function Step6() {
   const { data, updateData, currentStep, nextStep, prevStep } = useOnboardingStore()
 
   const {
@@ -25,19 +24,19 @@ export function Step4() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<Step4Data>({
-    resolver: zodResolver(step4Schema),
+  } = useForm<Step6Data>({
+    resolver: zodResolver(step6Schema),
     mode: "onChange",
     defaultValues: {
-      pendidikanTerakhir: data.pendidikanTerakhir || '',
+      tipePekerjaan: data.tipePekerjaan || '',
     },
   })
 
-  const selectedPendidikan = watch('pendidikanTerakhir')
+  const selectedTipe = watch('tipePekerjaan')
 
-  const isValid = !!selectedPendidikan
+  const isValid = !!selectedTipe
 
-  const onSubmit = (formData: Step4Data) => {
+  const onSubmit = (formData: Step6Data) => {
     updateData(formData)
     nextStep()
   }
@@ -56,21 +55,21 @@ export function Step4() {
         </p>
       </div>
 
-      <FormField error={errors.pendidikanTerakhir?.message}>
+      <FormField error={errors.tipePekerjaan?.message}>
         <div className="grid gap-3">
-          {PENDIDIKAN_OPTIONS.map((option) => (
+          {TIPE_OPTIONS.map((option) => (
             <button
               key={option}
               type="button"
               onClick={() =>
                 setValue(
-                    'pendidikanTerakhir',
-                    selectedPendidikan === option ? '' : option,
+                    'tipePekerjaan',
+                    selectedTipe === option ? '' : option,
                     { shouldValidate: true }
                 )
                 }
               className={`p-4 rounded-lg border-2 transition-all font-medium ${
-                selectedPendidikan === option
+                selectedTipe === option
                   ? 'border-primary bg-primary/5 text-primary'
                   : 'border-gray-200 hover:border-gray-300 text-gray-700'
               }`}

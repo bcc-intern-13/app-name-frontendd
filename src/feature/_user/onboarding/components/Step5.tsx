@@ -2,22 +2,25 @@
 
 import { useForm } from 'react-hook-form'
 import { zodResolver } from '@hookform/resolvers/zod'
-import { step4Schema, type Step4Data } from '@/lib/validations/onboarding'
+import { step5Schema, type Step5Data } from '@/lib/validations/onboarding'
 import { useOnboardingStore } from '@/lib/stores/onboarding'
 import { Button } from '@/components/ui/atoms/button'
 import { FormField } from '@/components/ui/molecules/form'
 import { number } from 'zod'
 
 
-const PENDIDIKAN_OPTIONS = [
-  'SMA/MK',
-  'D3',
-  'S1',
-  'S2 ke atas',
+const BIDANG_OPTIONS = [
+  'Teknologi & IT',
+  'Administrasi & Keuangan',
+  'Kesehatan',
+  'Desain & Kreatif',
+  'Pendidikan',
+  'Perdagangan & Ritel',
+  'Lainnya',
 ]
 
 
-export function Step4() {
+export function Step5() {
   const { data, updateData, currentStep, nextStep, prevStep } = useOnboardingStore()
 
   const {
@@ -25,19 +28,19 @@ export function Step4() {
     handleSubmit,
     watch,
     formState: { errors },
-  } = useForm<Step4Data>({
-    resolver: zodResolver(step4Schema),
+  } = useForm<Step5Data>({
+    resolver: zodResolver(step5Schema),
     mode: "onChange",
     defaultValues: {
-      pendidikanTerakhir: data.pendidikanTerakhir || '',
+      bidangKerja: data.bidangKerja || '',
     },
   })
 
-  const selectedPendidikan = watch('pendidikanTerakhir')
+  const selectedBidang = watch('bidangKerja')
 
-  const isValid = !!selectedPendidikan
+  const isValid = !!selectedBidang
 
-  const onSubmit = (formData: Step4Data) => {
+  const onSubmit = (formData: Step5Data) => {
     updateData(formData)
     nextStep()
   }
@@ -56,21 +59,21 @@ export function Step4() {
         </p>
       </div>
 
-      <FormField error={errors.pendidikanTerakhir?.message}>
-        <div className="grid gap-3">
-          {PENDIDIKAN_OPTIONS.map((option) => (
+      <FormField error={errors.bidangKerja?.message}>
+        <div className="grid grid-cols-2 gap-3">
+          {BIDANG_OPTIONS.map((option) => (
             <button
               key={option}
               type="button"
               onClick={() =>
                 setValue(
-                    'pendidikanTerakhir',
-                    selectedPendidikan === option ? '' : option,
+                    'bidangKerja',
+                    selectedBidang === option ? '' : option,
                     { shouldValidate: true }
                 )
                 }
               className={`p-4 rounded-lg border-2 transition-all font-medium ${
-                selectedPendidikan === option
+                selectedBidang === option
                   ? 'border-primary bg-primary/5 text-primary'
                   : 'border-gray-200 hover:border-gray-300 text-gray-700'
               }`}
