@@ -30,7 +30,7 @@ const Navbar = () => {
           <Image src={"/Logo.webp"} alt='LogoNav' width={500} height={500}/>
         </div>
         
-        <div>
+        <div className='hidden md:block'>
             <ul className='flex items-center justify-between gap-6 text-lg'>
                 <li>
                     <Link 
@@ -62,11 +62,11 @@ const Navbar = () => {
             </ul>
         </div>
 
-        <div className='flex gap-2'>
-          <Link href={"/onboarding"}>
+        <div className='flex gap-1 md:gap-2'>
+          <Link href={"/login"}>
             <Button variant={"login"} size={"default"}>Masuk</Button>
           </Link>
-          <Link href={"/beranda"}>
+          <Link href={"/register"}>
             <Button variant={"nav"} size={"default"} className='gap-2'>
               Daftar Gratis 
               <ArrowRight/>

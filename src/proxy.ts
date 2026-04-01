@@ -3,12 +3,12 @@ import { getIronSession } from 'iron-session'
 import { sessionOptions, SessionData } from '@/lib/session'
 
 const PROTECTED_ROUTES = [
-  '/beranda',
+  // '/beranda',
   '/cariLowongan',
   '/lamaran',
   '/smartProfile',
   '/career-mapping',
-  '/onboarding',
+  // '/onboarding',
   '/payment',
 ]
 
@@ -18,7 +18,7 @@ const PUBLIC_ONLY_ROUTES = [
   '/landing',
 ]
 
-export async function middleware(request: NextRequest) {
+export async function proxy(request: NextRequest) {
   const { pathname } = request.nextUrl
 
   let isLoggedIn = false
@@ -33,7 +33,7 @@ export async function middleware(request: NextRequest) {
     
     isLoggedIn = session.isLoggedIn && !!session.user
   } catch (error) {
-    console.error('Middleware session check error:', error)
+    console.error('proxy session check error:', error)
     isLoggedIn = false
   }
 
@@ -63,12 +63,12 @@ export async function middleware(request: NextRequest) {
 
 export const config = {
   matcher: [
-    '/beranda/:path*',
+    // '/beranda/:path*',
     '/cariLowongan/:path*',
     '/lamaran/:path*',
     '/smartProfile/:path*',
     '/career-mapping/:path*',
-    '/onboarding/:path*',
+    // '/onboarding/:path*',
     '/payment/:path*',
     '/login',
     '/register',
