@@ -10,7 +10,7 @@ export async function POST(request: NextRequest) {
         return NextResponse.json({ message: "Tidak ada session refresh token" }, { status: 401 });
     }
 
-    const response = await fetch(`${BE_URL}/auth/refresh`, {
+    const response = await fetch(`${BE_URL}/auth/refresh-token`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
