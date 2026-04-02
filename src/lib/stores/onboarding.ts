@@ -15,7 +15,6 @@ interface OnboardingStore {
   resetOnboarding: () => void
   
   isStepCompleted: (step: number) => boolean
-  getProgress: () => number
   submitOnboarding: () => Promise<{ success: boolean; error?: string }>
 }
 
@@ -29,9 +28,9 @@ export const useOnboardingStore = create<OnboardingStore>()(
       
       nextStep: () => {
         const { currentStep } = get()
-        if (currentStep < 10) {
+        if (currentStep < 11) {
           set({ currentStep: currentStep + 1 })
-        }
+        } 
       },
       
       prevStep: () => {
@@ -83,18 +82,12 @@ export const useOnboardingStore = create<OnboardingStore>()(
       submitOnboarding: async () => {
         const { data } = get()
         try {
-          console.log(data)
           await onboardingService.submit(data as CompleteOnboardingData)
           get().resetOnboarding()
           return { success: true }
         } catch (error) {
           return { success: false, error: error instanceof Error ? error.message : 'Gagal submit onboarding' }
         }
-      },
-      
-      getProgress: () => {
-        const { currentStep } = get()
-        return (currentStep / 10) * 100
       },
 
     }),

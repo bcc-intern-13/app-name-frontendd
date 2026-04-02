@@ -12,13 +12,14 @@ import { Step7 } from '../components/Step7'
 import { Step8 } from '../components/Step8'
 import { Step9 } from '../components/Step9'
 import { Step10 } from '../components/Step10'
+import OnboardingCompleted from '../components/OnboardingCompleted'
 
-export const TOTAL_STEPS = 10
+export const TOTAL_STEPS = 11
 
 
 
 export default function OnboardingContainer() {
-  const { currentStep, getProgress, submitOnboarding } = useOnboardingStore()
+  const { currentStep } = useOnboardingStore()
 
   const renderStep = () => {
     switch (currentStep) {
@@ -42,6 +43,8 @@ export default function OnboardingContainer() {
         return <Step9/>
       case 10:
         return <Step10/>
+      case 11:
+        return <OnboardingCompleted/>
       default:
         return <Step1 />
     }

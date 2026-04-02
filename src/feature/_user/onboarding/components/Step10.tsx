@@ -7,6 +7,8 @@ import { useOnboardingStore } from '@/lib/stores/onboarding'
 import { Button } from '@/components/ui/atoms/button'
 import { FormField } from '@/components/ui/molecules/form'
 import { number } from 'zod'
+import { useToast } from '@/shared/context/ToastContext'
+import { useState } from 'react'
 
 
 const special_needs_OPTIONS = [
@@ -19,7 +21,7 @@ const special_needs_OPTIONS = [
 
 export function Step10() {
   const { data, updateData, currentStep, nextStep, prevStep } = useOnboardingStore()
-
+  const { showToast } = useToast()
   const {
     setValue,
     handleSubmit,
@@ -39,7 +41,8 @@ export function Step10() {
 
   const onSubmit = (formData: Step10Data) => {
     updateData(formData)
-    useOnboardingStore.getState().submitOnboarding()
+
+    nextStep()
   }
 
   return (

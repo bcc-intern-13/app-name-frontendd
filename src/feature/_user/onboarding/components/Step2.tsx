@@ -9,7 +9,7 @@ import { FormField } from '@/components/ui/molecules/form'
 
 
 const AGE_OPTIONS = [
-  '18',
+  'Kurang dari 18',
   '18-24',
   '25-30',
   '31-35',

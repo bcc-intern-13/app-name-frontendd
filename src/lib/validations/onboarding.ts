@@ -17,7 +17,10 @@ export const step2Schema = z.object({
 
 
 export const step3Schema = z.object({
-  city: z.string().min(1, 'Kota wajib diisi'),
+  city: z
+    .string()
+    .min(1, 'Kota wajib diisi')
+    .regex(/^[A-Z].*/, 'Kota harus diawali dengan huruf kapital'),
 })
 
 export const step4Schema = z.object({

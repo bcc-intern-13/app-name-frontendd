@@ -50,7 +50,6 @@ export default function LoginContainer() {
     try {
       await login(data)
 
-      console.log(getAccessToken)
 
       showToast({
         type: 'success',
