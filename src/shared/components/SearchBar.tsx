@@ -22,8 +22,8 @@ export default function SearchBar({ onClose }: SearchBarProps) {
   } = useSearchBar()
 
   return (
-    <div ref={searchRef} className="relative w-full max-w-2xl">
-      <div className="relative">
+    <div ref={searchRef} className="relative w-full">
+      <div className="relative bg-white rounded-full">
         <Search className="absolute left-4 top-1/2 -translate-y-1/2 w-5 h-5 text-secondary" />
 
         <Input

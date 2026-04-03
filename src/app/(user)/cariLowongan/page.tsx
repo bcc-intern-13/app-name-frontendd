@@ -1,8 +1,11 @@
 import React from 'react'
+import CariLowonganContainer from '@/feature/_user/cariLowongan/container/CariLowonganContainer'
 
 const page = () => {
   return (
-    <div>page</div>
+    <section className='bg-bl-01'>
+      <CariLowonganContainer/>
+    </section>
   )
 }
 

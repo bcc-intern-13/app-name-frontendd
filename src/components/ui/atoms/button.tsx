@@ -20,9 +20,12 @@ const buttonVariants = cva(
           "bg-white border border-secondary text-secondary font-medium hover:bg-secondary hover:text-white ",
         black:
           "bg-white border-2 border-black text-black font-medium hover:bg-black hover:text-white ",
+        search:
+          "bg-secondary border border-secondary text-white font-medium hover:bg-white hover:text-secondary shadow-2xl ",
       },
       size: {
         default: "h-10 px-4 py-2",
+        base: "h-12 px-4 py-4",
         lg: "h-14 w-full text-center",
       },
     },

@@ -9,12 +9,15 @@ const api = axios.create({
   withCredentials: true, 
 })
 
-let accessToken: string | null = null
+// let accessToken: string | null = null
 
-export const setAccessToken = (token: string ) => {
-  // accessToken = token
+export const setAccessToken = (token: string | null) => {
   if (typeof window !== 'undefined') {
-    sessionStorage.setItem('access_token', token);
+    if (token) {
+      sessionStorage.setItem('access_token', token);
+    } else {
+      sessionStorage.removeItem('access_token');
+    }
   }
 }
 

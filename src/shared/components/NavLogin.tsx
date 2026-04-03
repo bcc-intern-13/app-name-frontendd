@@ -60,22 +60,21 @@ const NavLogin = () => {
                 </ul>
             </div>
 
-            <div className='hidden md:flex items-center justify-between gap-2 py-1 px-2 border border-[#D9D9D9] rounded-full cursor-pointer hover:bg-gray-200'>
-                <div className='w-11 h-11 rounded-full  bg-[#D9D9D9]'>
-                    .
+            <Link href={"/smartProfile"}>
+                <div className='hidden md:flex items-center justify-between gap-2 py-1 px-2 border border-[#D9D9D9] rounded-full cursor-pointer hover:bg-gray-200'>
+                    <div className='w-11 h-11 rounded-full  bg-[#D9D9D9]'>
+                        .
+                    </div>
+                    <div className='pr-8'>
+                        <h4 className='text-secondary font-semibold text-base'>
+                            SMART PROFILE
+                        </h4>
+                        <p className='font-semibold text-base'>
+                            Username
+                        </p>
+                    </div>
                 </div>
-                <div className='pr-8'>
-                    <h4 className='text-secondary font-semibold text-base'>
-                        SMART PROFILE
-                    </h4>
-                    <p className='font-semibold text-base'>
-                        Username
-                    </p>
-                </div>
-                <div>
-                    <ChevronDown/>
-                </div>
-            </div>
+            </Link>
 
             <button
             className="pointer-events-auto md:hidden flex flex-col items-center justify-center w-14.5 h-14.5 rounded-2xl border border-secondary-bl-09 bg-white cursor-pointer z-50 ml-auto transition-transform hover:scale-105 shadow-sm"
@@ -122,16 +121,18 @@ const NavLogin = () => {
                             Lamaran
                         </Link>
                     </li>
-                    <div className='flex items-center justify-between gap-2 py-1 px-2 border border-[#D9D9D9] cursor-pointer hover:bg-gray-200'>
-                        <div className='w-11 h-11 rounded-full  bg-[#D9D9D9]'>
-                            .
+                    <Link href={"/smartProfile"}>
+                        <div className='flex items-center justify-between gap-2 py-1 px-2 border border-[#D9D9D9] cursor-pointer hover:bg-gray-200'>
+                            <div className='w-11 h-11 rounded-full  bg-[#D9D9D9]'>
+                                .
+                            </div>
+                            <div className='pr-8'>
+                                <p className='font-semibold text-base'>
+                                    Username
+                                </p>
+                            </div>
                         </div>
-                        <div className='pr-8'>
-                            <p className='font-semibold text-base'>
-                                Username
-                            </p>
-                        </div>
-                    </div>
+                    </Link>
                     <button
                         onClick={logout}
                         className="w-full py-4 px-2 rounded-b-lg hover:bg-gray-100 hover:shadow-lg hover:border-b-2 hover:border-b-[#252525] flex items-center gap-2 text-[#000000] text-base font-medium transition-transform duration-300"
